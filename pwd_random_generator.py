@@ -32,19 +32,21 @@ if __name__ == "__main__":
     
     non_characters = input("Deseja escolher os tipos de caracteres a serem usados na senha? (s/n): ").lower()
     if non_characters == 's':
-
-        while True:
             use_lowercase = input("Deseja usar letras minusculas? (s/n):").lower() == 's'
             use_uppercase = input("Deseja usar letras maiusculas? (s/n):").lower() == 's'
             use_punctuation = input("Deseja usar letras pontuações? (s/n):").lower() == 's'
             use_digits = input("Deseja usar letras digitos? (s/n):").lower() == 's'
             
             try: 
-                print('Senha gerada:', create_random_pwd(length, use_lowercase, use_uppercase, use_punctuation, use_digits))
-                print(f'A senha gerada possui', len(create_random_pwd(length)), 'caracteres!')
-                break
+                password = create_random_pwd(length, use_lowercase, use_uppercase, use_punctuation, use_digits)
+                print('Senha gerada:', password )
+                print(f'A senha gerada possui', len(password), 'caracteres!')
             except ValueError as error:
                 print(error)
     else:
-        print('Senha gerada:', create_random_pwd(length, use_lowercase=True, use_uppercase=True, use_punctuation=True, use_digits=True))
-        print(f'A senha gerada possui', len(create_random_pwd(length)), 'caracteres!')
+        password = create_random_pwd(length)
+        print('Senha gerada:', password)
+        print(f'A senha gerada possui', len(password), 'caracteres!')
+        
+    from salvar_senha import salvar_senha
+    salvar_senha(password)
