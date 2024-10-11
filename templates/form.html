@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerador de Senhas</title>
+</head>
+<body>
+    <h1>Gerador de Senhas</h1>
+    <form action="/generate" method="post">
+        <label for="length">Digite o tamanho da senha:</label>
+        <input type="number" id="length" name="length" min="10" required><br><br>
+
+        <label for="lowercase">Usar letras minúsculas?</label>
+        <input type="checkbox" id="lowercase" name="use_lowercase" checked><br>
+
+        <label for="uppercase">Usar letras maiúsculas?</label>
+        <input type="checkbox" id="uppercase" name="use_uppercase" checked><br>
+
+        <label for="punctuation">Usar pontuação?</label>
+        <input type="checkbox" id="punctuation" name="use_punctuation" checked><br>
+
+        <label for="digits">Usar dígitos?</label>
+        <input type="checkbox" id="digits" name="use_digits" checked><br><br>
+
+        <button type="submit">Gerar Senha</button>
+    </form>
+</body>
+</html>
